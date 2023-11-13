@@ -1,5 +1,6 @@
 # First github synced script
 
+# Load libraries ----------------------------------------------------------
 # Load libraries
 library(renv)
 library(tidyverse)
@@ -7,10 +8,13 @@ library(tidyverse)
 # Restore the package versions of the packages used to develop this project
 renv::restore()
 
-# Make a test graph to check if everything works
+# Make a test graph -------------------------------------------------------
+
+# Create a test dataframe
 x <- c(1,2,3,4,5)
 y <- c(1,4,3,6,9)
 
+# Make a test graph to check if everything works and save it as a png
 data <- data.frame(x,y)
 fig01 <- data |> ggplot(aes(x=x,y=y)) +
   geom_point()+
